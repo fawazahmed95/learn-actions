@@ -19,7 +19,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           sudo docker run --name mycont --rm -itd --privileged -v "$(pwd):$(pwd)" -v "/Volumes:/Volumes" -w "$(pwd)" debian:experimental-20240311
-          sudo docker exec --privileged -it mycont apt-get update
-          sudo docker exec --privileged -it mycont apt-get install poppler-utils/experimental -y
+          sudo docker exec --privileged -i mycont apt-get update
+          sudo docker exec --privileged -i mycont apt-get install poppler-utils/experimental -y
 
       - uses: fawazahmed0/action-debug@main
